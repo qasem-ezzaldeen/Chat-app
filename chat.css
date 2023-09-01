@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Hanken+Grotesk:wght@300;400;500;700&family=Montserrat:wght@500;700&family=Outfit:wght@300;400;600&family=PT+Sans&family=Red+Hat+Display:wght@700;900&family=Rubik:wght@400;500;700&display=swap');
+:root{
+    --gradient:linear-gradient(to bottom left,hsl(293, 100%, 63%),hsl(264, 100%, 61%));
+    --right-gradient:linear-gradient(to right,hsl(293, 100%, 63%),hsl(264, 100%, 61%));
+    --left-gradient:linear-gradient(to left,hsl(293, 100%, 63%),hsl(264, 100%, 61%))
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Rubik,serif;
+}
+
+.page{
+    overflow: hidden;
+    position: relative;
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0 0 0;
+}
+.page::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:-50vw;
+    width: 100%;
+    max-width: 600px;
+    height: 125vw;
+    max-height: 75%;
+    background: var(--gradient);
+    border-radius: 0 0 50% 50%;
+}
+.page::after{
+    content: "";
+    position: absolute;
+    bottom:0;
+    right: -50vw;
+    width: 100%;
+    max-width: 600px;
+    height: 125vw;
+    max-height: 75%;
+    background: #F3F0F7;
+    border-radius: 50% 50% 0 0;
+}
+.phone{
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 504px;
+    width: 238px;
+    border-radius: 2rem;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px 0 grey;
+}
+.screen{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 218px;
+    height: 484px;
+    overflow: hidden;
+    background-color: hsl(270, 20%, 96%);
+    border-radius: 1.5rem;
+}
+.screen::before{
+    content: "";
+    position: absolute;
+    width: 128px;
+    height: 36px;
+    top:0;
+    z-index: 1;
+    border-radius: 1rem ;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+}
+.top-bar{
+    background: var(--left-gradient);
+    width: 100%;
+    height: 15%;
+    border-radius: .5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.content{
+    padding: 0.5em;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    height: 70%;
+}
+.content img{
+    width: 2em;
+    border-radius: 50%;
+    outline: 1px solid white;
+}
+.name-tag{
+    font-size: .5rem;
+    color:hsl(276, 100%, 81%);
+}
+.name{
+    font-size: .75rem;
+    color: white;
+    font-weight: 500;
+}
+.name-tag+svg{
+    position: absolute;
+    right: 5px;
+}
+.chat{
+    overflow: hidden;
+    font-size: 0.5rem;
+    height:75%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+.received{
+    margin: .7em;
+    background-color:#EDE5F4;
+    padding: .7em;
+    width: 70%;
+    color: hsl(276, 55%, 52%);
+    border-radius: 1em 1em 1em 0.5em;
+}
+.chat img{
+    width: 3rem;
+    border-radius: 1rem;
+    margin: 3px;
+}
+.pics>*{
+    float:right
+}
+.sent{
+    display: flex;
+    justify-content: flex-end;
+}
+.message{
+    background-color: white;
+    border-radius: 1em 1em 0.5em 1em;
+    max-width: 70%;
+    width: fit-content;
+    margin: .7em;
+    padding: .7em;
+    
+}
+.option{
+    position: relative;
+    background: var(--right-gradient);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    height: 2.5rem;
+    color:hsla(270, 20%, 96%, 0.788) ;
+}
+.price{
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: white;
+    position: absolute;
+    right: 10px;
+}
+.entry{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.entry input{
+    width: 90%;
+    height: 2.5em;
+    padding: 0.5em 1em;
+    border: none;
+    position: relative;
+    bottom: -5px;
+    border-radius: 5rem;
+}
+.send{
+    cursor: pointer;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    border-radius: 50%;
+    background-color: hsl(271, 36%, 24%);
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+.text{
+    z-index: 1;
+    display: flex;
+    flex-flow: column wrap;
+    gap:2rem;
+    margin: 2rem;
+    text-align: center;
+    max-width: 27em;
+}
+.title{
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: hsl(271, 36%, 24%);
+}
+p{
+    color:hsl(270, 7%, 64%);
+    line-height:1.5em
+}
+
+@media (min-height:800px){
+    .page{
+        height: 100vh;
+    }
+}
+@media (min-width:800px){
+    .page{
+    height: 100vh;
+    gap: clamp(4rem,40vw,6rem);
+    flex-direction: row;
+    padding: 0;}
+    .page::before{
+        left: -12vw;
+        max-height: 85%;
+    }
+    .page::after{
+        right: -12vw;
+        max-height: 85%;
+    }
+    .text{
+        text-align: left;
+    }
+}
+
